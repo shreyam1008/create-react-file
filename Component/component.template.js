@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const path = require('path');
-const common = require(path.resolve(__dirname, '../common'));
+const path = require("path");
+const common = require(path.resolve(__dirname, "../common"));
 
 const { createComponentName, createClassName } = common;
 
@@ -17,32 +17,20 @@ import {
 
 const createFunctionComponent = (opts = {}) => {
   const {
-    name = '',
-    className = '',
-    componentName = '',
+    name = "",
+    className = "",
+    componentName = "",
     hooks: isHooks = false,
   } = opts;
 
   return `
-import React, {
-  useRef,
-  useMemo,
-  useState,
-  useEffect,
-  useReducer,
-  useCallback,
-  useLayoutEffect,
-  useImperativeHandle,
-  useContext,
-} from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
 
-${ isHooks ? hooksCode : 'DELETE_LINE' }
-${ isHooks ? '' : 'DELETE_LINE' }
+${isHooks ? hooksCode : "DELETE_LINE"}
+${isHooks ? "" : "DELETE_LINE"}
 const ${componentName} = React.forwardRef((props = {}, ref) => {
-  ${ isHooks ? 'ref = useStableRef(ref);' : 'DELETE_LINE' }
-  ${ isHooks ? '' : 'DELETE_LINE' }
+  ${isHooks ? "ref = useStableRef(ref);" : "DELETE_LINE"}
+  ${isHooks ? "" : "DELETE_LINE"}
   const {
     className,
     children,
@@ -61,19 +49,19 @@ const ${componentName} = React.forwardRef((props = {}, ref) => {
   );
 });
 
-${ componentName }.propTypes = {};
+${componentName}.propTypes = {};
 
-${ componentName }.defaultProps = {};
+${componentName}.defaultProps = {};
 
-export default ${ componentName };
+export default ${componentName};
 `;
 };
 
 const createFunctionPage = (opts = {}) => {
   const {
-    name = '',
-    className = '',
-    componentName = '',
+    name = "",
+    className = "",
+    componentName = "",
     hooks: isHooks = false,
   } = opts;
 
@@ -92,11 +80,11 @@ import React, {
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-${ isHooks ? hooksCode : 'DELETE_LINE' }
-${ isHooks ? '' : 'DELETE_LINE' }
+${isHooks ? hooksCode : "DELETE_LINE"}
+${isHooks ? "" : "DELETE_LINE"}
 const ${componentName} = React.forwardRef((props = {}, ref) => {
-  ${ isHooks ? 'ref = useStableRef(ref);' : 'DELETE_LINE' }
-  ${ isHooks ? '' : 'DELETE_LINE' }
+  ${isHooks ? "ref = useStableRef(ref);" : "DELETE_LINE"}
+  ${isHooks ? "" : "DELETE_LINE"}
   const { className } = props;
 
   const cls = classnames({
@@ -106,24 +94,24 @@ const ${componentName} = React.forwardRef((props = {}, ref) => {
 
   return (
     <div ref={ref} className={cls}>
-      ${ name }
+      ${name}
     </div>
   );
 });
 
-${ componentName }.propTypes = {};
+${componentName}.propTypes = {};
 
-${ componentName }.defaultProps = {};
+${componentName}.defaultProps = {};
 
-export default ${ componentName };
+export default ${componentName};
 `;
 };
 
 const createClassComponent = (opts = {}) => {
   const {
-    name = '',
-    className = '',
-    componentName = '',
+    name = "",
+    className = "",
+    componentName = "",
     hooks: isHooks = false,
   } = opts;
 
@@ -132,7 +120,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-class ${ componentName } extends Component {
+class ${componentName} extends Component {
   constructor(props) {
     super(props);
 
@@ -159,15 +147,15 @@ class ${ componentName } extends Component {
   }
 }
 
-export default ${ componentName };
+export default ${componentName};
 `;
 };
 
 const createClassPage = (opts = {}) => {
   const {
-    name = '',
-    className = '',
-    componentName = '',
+    name = "",
+    className = "",
+    componentName = "",
     hooks: isHooks = false,
   } = opts;
 
@@ -176,7 +164,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-class ${ componentName } extends Component {
+class ${componentName} extends Component {
   constructor(props) {
     super(props);
 
@@ -197,21 +185,18 @@ class ${ componentName } extends Component {
 
     return (
       <div className={cls}>
-        ${ name }
+        ${name}
       </div>
     );
   }
 }
 
-export default ${ componentName };
+export default ${componentName};
 `;
 };
 
 const create = (opts = {}) => {
-  const {
-    page = false,
-    function: isFunction = false,
-  } = opts;
+  const { page = false, function: isFunction = false } = opts;
 
   let fn;
 
