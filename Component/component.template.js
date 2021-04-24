@@ -25,11 +25,13 @@ const createFunctionComponent = (opts = {}) => {
 
   return `
 import React from 'react';
-import './{componentName}.css'
+import './${componentName}.css'
 
+
+const ${componentName} = () =>
   return (
-    <div className={componentName}>
-      this is {componentName} component
+    <div className=${componentName}>
+      this is ${componentName} component
     </div>
   );
 });
