@@ -63,7 +63,7 @@ function createComponent(opts = {}) {
       }
       case 'style.template.js': {
         const code = fn(opts);
-        const filePath = path.resolve(dir, `${name}.scss`);
+        const filePath = path.resolve(dir, `${name}.css`);
 
         wirte(filePath, code);
 
