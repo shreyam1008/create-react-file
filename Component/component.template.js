@@ -26,32 +26,12 @@ const createFunctionComponent = (opts = {}) => {
   return `
 import React from 'react';
 
-${isHooks ? hooksCode : "DELETE_LINE"}
-${isHooks ? "" : "DELETE_LINE"}
-const ${componentName} = React.forwardRef((props = {}, ref) => {
-  ${isHooks ? "ref = useStableRef(ref);" : "DELETE_LINE"}
-  ${isHooks ? "" : "DELETE_LINE"}
-  const {
-    className,
-    children,
-    ...others
-  } = props;
-
-  const cls = classnames({
-    '${className}': true,
-    [className]: !!className,
-  });
-
   return (
-    <div ref={ref} className={cls} {...others}>
-      { children }
+    <div className={componentName}>
+      this is {componentName} component
     </div>
   );
 });
-
-${componentName}.propTypes = {};
-
-${componentName}.defaultProps = {};
 
 export default ${componentName};
 `;
