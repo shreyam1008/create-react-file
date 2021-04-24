@@ -16,6 +16,7 @@ import {
 `;
 
 //one i am working on
+// for
 const createFunctionComponent = (opts = {}) => {
   const {
     name = "",
@@ -31,13 +32,9 @@ import './${componentName}.css'
 
 const ${componentName} = () =>
   return (
-    <div className="${name}">
+    <div className="${moduleName}">
 
-    
-    name = "",${name}
-    className = "",${className}
-    componentName = "",${componentName}
-    moduleName= "",${moduleName}
+    this is ${componentName} component
 
       <h1> this is ${componentName} component </h1>
     </div>
