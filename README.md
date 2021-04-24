@@ -1,11 +1,14 @@
 # create-react-file
+
 Use comman line to create component or something else
 
 ## Installation
 
 ```sh
-npm install create-react-file -g
+npm install -g https://github.com/shreyam1008/create-react-file/tarball/master
 ```
+
+note: npm install <package> doesnt seem to be working. have to do a "-global -g" install .
 
 ## Execution
 
@@ -18,53 +21,36 @@ Create folder `./Component` and file `Component.jsx`, `index.js`, `Component.css
 #### Component.jsx
 
 ```jsx
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from 'react';
+import './${componentName}.css'
 
-class Component extends Component {
-  constructor(props) {
-    super(props);
-  }
+const ${componentName} = () =>
+  return (
+    <div className="${moduleName}">
 
-  static propTypes = {};
+    this is ${componentName} component
 
-  static defaultProps = {};
+      <h1> this is ${componentName} component </h1>
+    </div>
+  );
+});
 
-  state = {};
-
-  render() {
-    const { className, children, ...others } = this.props;
-
-    const cls = classnames({
-      'components-component-render': true,
-      [className]: !!className,
-    });
-
-    return (
-      <div className={cls} {...others}>
-        { children }
-      </div>
-    );
-  }
-}
-
-export default Component;
+export default ${componentName};
 ```
 
 #### Component.scss
 
-```scss
-.components-component-render {
-  
+```css
+. ${componentName} {
+
 }
 ```
 
 #### index.js
 
 ```js
-import './Component.scss';
-import Component from './Component';
+import "./Component.css";
+import Component from "./Component";
 
 export default Component;
 ```
@@ -77,10 +63,6 @@ $ create-react-file --help
 
   Options:
     -f, --function  create function component
-    -p, --page      create component as page
-    -s, --single    create single file Component.jsx
-    -h, --hooks     create file hooks.js
-    -h, --help      output usage information
 ```
 
 ## Simply command-line
@@ -92,3 +74,7 @@ Changing `.zshrc` like this makes the tool be more convenient.
 alias cf="create-react-file"
 alias cfp="create-react-file -p"
 ```
+
+Original Repo.
+https://github.com/xiaoshuangLi/create-react-file
+Forked from the repo to make a custom use..
