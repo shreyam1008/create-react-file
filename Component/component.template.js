@@ -30,7 +30,9 @@ import './${componentName}.css'
 
 const ${componentName} = () =>
   return (
-    <div className=${componentName}>
+    <div className="${lowercase(componentName)}">
+    ${name}
+    ${className}
       this is ${componentName} component
     </div>
   );
