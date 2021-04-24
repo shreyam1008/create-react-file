@@ -25,6 +25,7 @@ const createFunctionComponent = (opts = {}) => {
 
   return `
 import React from 'react';
+import './{componentName}.css'
 
   return (
     <div className={componentName}>
