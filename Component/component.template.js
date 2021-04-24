@@ -3,7 +3,7 @@
 const path = require("path");
 const common = require(path.resolve(__dirname, "../common"));
 
-const { createComponentName, createClassName } = common;
+const { createComponentName, createClassName, createModuleName } = common;
 
 const hooksCode = `
 import {
@@ -21,6 +21,7 @@ const createFunctionComponent = (opts = {}) => {
     name = "",
     className = "",
     componentName = "",
+    moduleName = "",
     hooks: isHooks = false,
   } = opts;
 
@@ -31,6 +32,13 @@ import './${componentName}.css'
 const ${componentName} = () =>
   return (
     <div className="${name}">
+
+    
+    name = "",${name}
+    className = "",${className}
+    componentName = "",${componentName}
+    moduleName= "",${moduleName}
+
       <h1> this is ${componentName} component </h1>
     </div>
   );
@@ -194,8 +202,9 @@ const create = (opts = {}) => {
 module.exports = (opts) => {
   const componentName = createComponentName(opts);
   const className = createClassName(opts);
+  const moduleName = createModuleName(opts);
 
-  const res = Object.assign({ componentName, className }, opts);
+  const res = Object.assign({ componentName, className, moduleName }, opts);
 
   return create(res);
 };
