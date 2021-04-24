@@ -2,7 +2,6 @@
 
 const path = require("path");
 const common = require(path.resolve(__dirname, "../common"));
-t.toLower()
 
 const { createComponentName, createClassName } = common;
 
@@ -31,7 +30,7 @@ import './${componentName}.css'
 
 const ${componentName} = () =>
   return (
-    <div className="${${componentName}.toLower()}">
+    <div className="${componentName}">
     ${name}
     ${className}
       this is ${componentName} component
