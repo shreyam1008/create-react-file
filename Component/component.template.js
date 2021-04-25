@@ -16,30 +16,20 @@ import {
 `;
 
 //one i am working on
-// for
+// for normal without hooks or redux
 const createFunctionComponent = (opts = {}) => {
-  const {
-    name = "",
-    className = "",
-    componentName = "",
-    moduleName = "",
-    hooks: isHooks = false,
-  } = opts;
+  const { componentName = "", moduleName = "", hooks: isHooks = false } = opts;
 
   return `
 import React from 'react';
-import './${componentName}.css'
 
-const ${componentName} = () =>
+const ${componentName} = () =>{
   return (
     <div className="${moduleName}">
-
-    this is ${componentName} component
-
-      <h1> this is ${componentName} component </h1>
+      <h3> this is ${componentName} component </h3>
     </div>
   );
-});
+};
 
 export default ${componentName};
 `;

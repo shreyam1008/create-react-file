@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-const path = require('path');
-const common = require(path.resolve(__dirname, '../common'));
+const path = require("path");
+const common = require(path.resolve(__dirname, "../common"));
 
-const { createClassName } = common;
+const { createModuleName } = common;
 
-module.exports = opts => `
-.${createClassName(opts)} {
+module.exports = (opts) => `
+.${createModuleName(opts)} {
   
 }
 `;

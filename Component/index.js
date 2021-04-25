@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-const path = require('path');
-const common = require(path.resolve(__dirname, '../common'));
+const path = require("path");
+const common = require(path.resolve(__dirname, "../common"));
 
 const { createComponentName } = common;
 
 const create = ({ compName } = {}) => `
-import './${compName}.scss';
+import './${compName}.css';
 
 export * from './${compName}';
 export { default } from './${compName}';
